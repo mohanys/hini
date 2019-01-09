@@ -1,0 +1,270 @@
+Spring & Angular : https://dzone.com/articles/angular-2-and-spring-boot-development-environment
+
+Webservice & Angular : https://www.genuitec.com/connecting-angular-2-app-java-ee-backend/
+
+Webservices Udemy : https://github.com/in28minutes/spring-web-services/tree/master/soap-web-services
+
+Angular JS : https://www.barbarianmeetscoding.com/blog/2016/03/26/getting-started-with-angular-2-step-by-step-2-refactoring-to-services
+
+Git url : https://github.com/mohanys/hini.git
+
+1. Coding Standards follow
+2. Order of N
+
+Webservices
+-----------
+
+https://dzone.com/articles/top-soap-interview-questions-for-freshers-amp-expe
+
+Web Service Security Standards
+-----------------------------
+
+A request can be sent from the Web service client to Security Token Service. This service can be an intermediate web service which is specifically 
+built to supply usernames/passwords or certificates to the actual SOAP web service.
+The security token is then passed to the Web service client.
+The Web service client then called the web service, but, this time, ensuring that the security token is embedded in the SOAP message.
+The Web service then understands the SOAP message with the authentication token and can then contact the Security Token service to see if the security token is authentic or not.
+
+*** What are the elements of a SOAP message structure?
+
+It is a common XML document that contains the elements as a SOAP message
+
+Envelope: It is an obligatory root element that translates the XML document and defines the beginning and end of the message.
+Header: It is an optional item which contains information about the message being sent.
+Body: It contains the XML data comprising the message being sent.
+Fault: It provides the information on errors that occurred while during message processing.
+
+Hibernate
+---------
+What are different states of an entity bean?
+An entity bean instance can exist is one of the three states.
+
+Transient: When an object is never persisted or associated with any session, it’s in transient state. Transient instances may be made persistent by calling save(), persist() or saveOrUpdate(). Persistent instances may be made transient by calling delete().
+Persistent: When an object is associated with a unique session, it’s in persistent state. Any instance returned by a get() or load() method is persistent.
+Detached: When an object is previously persistent but not associated with any session, it’s in detached state. Detached instances may be made persistent by calling update(), saveOrUpdate(), lock() or replicate(). The state of a transient or detached instance may also be made persistent as a new persistent instance by calling merge().
+
+What is difference between Hibernate Session get() and load() method?
+Hibernate session comes with different methods to load data from database. get and load are most used methods, at first look they seems similar but there are some differences between them.
+
+get() loads the data as soon as it’s called whereas load() returns a proxy object and loads data only when it’s actually required, so load() is better because it support lazy loading.
+Since load() throws exception when data is not found, we should use it only when we know data exists.
+We should use get() when we want to make sure data exists in the database.
+
+
+
+
+Angular JS
+-----------
+Modules − This is used to break up the application into logical pieces of code. Each piece of code or module is designed to perform a single task.
+
+Component − This can be used to bring the modules together.
+
+Templates − This is used to define the views of an Angular JS application.
+Templates − These are the rendered view with information from the controller and model. These can be a single file (like index.html) or multiple views in one page using "partials".
+
+Metadata − This can be used to add more data to an Angular JS class.
+
+Service − This is used to create components which can be shared across the entire application.
+Services − AngularJS come with several built-in services for example $https: to make a XMLHttpRequests. These are singleton objects which are instantiated only once in app.
+
+Data-binding − It is the automatic synchronization of data between model and view components.
+
+Scope − These are objects that refer to the model. They act as a glue between controller and view.
+
+Controller − These are JavaScript functions that are bound to a particular scope.
+
+Filters − These select a subset of items from an array and returns a new array.
+
+Directives − Directives are markers on DOM elements (such as elements, attributes, css, and more). These can be used to create custom HTML tags that serve as new, custom widgets. AngularJS has built-in directives (ngBind, ngModel...)
+
+Routing − It is concept of switching views.
+
+Model View Whatever − MVC is a design pattern for dividing an application into different parts (called Model, View and Controller), each with distinct responsibilities. AngularJS does not implement MVC in the traditional sense, but rather something closer to MVVM (Model-View-ViewModel). The Angular JS team refers it humorously as Model View Whatever.
+
+Deep Linking − Deep linking allows you to encode the state of application in the URL so that it can be bookmarked. The application can then be restored from the URL to the same state.
+
+Dependency Injection − AngularJS has a built-in dependency injection subsystem that helps the developer by making the application easier to develop, understand, and test.
+
+The AngularJS Components
+------------------------
+The AngularJS framework can be divided into following three major parts −
+
+ng-app − This directive defines and links an AngularJS application to HTML.
+
+ng-model − This directive binds the values of AngularJS application data to HTML input controls.
+
+ng-bind − This directive binds the AngularJS Application data to HTML tags.
+
+Directvies : 
+ng-app : directive defines and links an AngularJS application to HTML. It also indicate the start of the application.
+ng-model directive binds the values of AngularJS application data to HTML input controls. 
+	It creates a model variable which can be used with the html page and within the container control( for example, div) having ng-app directive.
+ng-bind : directive binds the AngularJS Application data to HTML tags. ng-bind updates the model created by ng-model
+ directive to be displayed in the html tag whenever user input something in the control or updates the html control's 
+ data when model data is updated by controller.
+ng-controller:  directive tells AngularJS what controller to use with this view. AngularJS application mainly relies on controllers to control 
+the flow of data in the application. A controller is a JavaScript object containing attributes/properties and functions. Each controller accepts 
+$scope as a parameter which refers to the application/module that controller is to control
+ng-init : directive initializes an AngularJS Application data. It is used to put values to the variables to be used in the application.
+ng-repeat : directive repeats html elements for each item in a collection.
+
+Expressions : Expressions are used to bind application data to html. Expressions are written inside double braces like {{ expression}}. Expressions behave in same way as ng-bind directives. 
+AngularJS application expressions are pure JavaScript expressions and outputs the data where they are used.
+
+NgModule metadata
+----------------
+An NgModule is defined by a class decorated with @NgModule(). The @NgModule() decorator is a function that takes a single metadata object, whose properties describe the module. The most important properties are as follows.
+
+declarations: The components, directives, and pipes that belong to this NgModule.
+
+exports: The subset of declarations that should be visible and usable in the component templates of other NgModules.
+
+imports: Other modules whose exported classes are needed by component templates declared in this NgModule.
+
+providers: Creators of services that this NgModule contributes to the global collection of services; they become accessible in all parts of the app. (You can also specify providers at the component level, which is often preferred.)
+
+bootstrap: The main application view, called the root component, which hosts all other app views. Only the root NgModule should set the bootstrap property.
+
+Ex : 
+
+// imports
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { ItemDirective } from './item.directive';
+
+
+// @NgModule decorator with its metadata
+@NgModule({
+  declarations: [
+    AppComponent,
+    ItemDirective
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+@Component 
+----------
+The @Component decorator identifies the class immediately below it as a component class, and specifies its metadata.
+
+Ex : 
+@Component({
+  selector:    'app-hero-list',
+  templateUrl: './hero-list.component.html',
+  providers:  [ HeroService ]
+})
+
+selector: A CSS selector that tells Angular to create and insert an instance of this component wherever it finds the corresponding tag in template HTML.
+ For example, if an app's HTML contains <app-hero-list></app-hero-list>, then Angular inserts an instance of the HeroListComponent view between those tags.
+
+templateUrl: The module-relative address of this component's HTML template. Alternatively, you can provide the HTML template inline, as the value of the template property.
+ This template defines the component's host view.
+
+providers: An array of providers for services that the component requires. In the example, this tells Angular how to provide the HeroService instance that the 
+component's constructor uses to get the list of heroes to display.
+
+Explain Directive scopes?
+-------------------------
+There are three types of directive scopes available in Angular.
+
+Parent Scope: is default scope
+Child Scope:  If the properties and functions you set on the scope are not relevant to other directives and the parent, you should probably create a new child scope.
+Isolated Scope: Isolated Scope is used if the directive you are going to build is self-contained and reusable. Does not inherit from parent scope, used for private/internal use.
+
+Java 
+----
+Checked exceptions
+------------------
+ReflectiveOperationException,ClassNotFoundException,NoSuchFieldException,IOException,EOFException,FileNotFoundException
+
+Unchecked Exceptions
+--------------------
+ArithmeticException,IndexOutOfBoundsException,ArrayIndexOutOfBoundsException,StringIndexOutOfBoundsException,ArrayStoreException
+ClassCastException,EnumConstantNotPresentException, IllegalArgumentException
+
+
+Features|	Stack|	Heap
+Memory|	Stack memory is used only by one thread of execution.|Heap memory is used by all the parts of the application.
+Access|Stack memory can’t be accessed by other threads.|Objects stored in the heap are globally accessible.
+Memory Management|Follows LIFO manner to free memory.|Memory management is based on generation associated to each object.
+Lifetime|Exists until the end of execution of the thread.|Heap memory lives from the start till the end of application execution.
+Usage|Stack memory only contains local primitive and reference variables to objects in heap space.|Whenever an object is created, it’s always stored in the Heap space.
+ 
+
+
+Spring 
+------
+https://www.journaldev.com/8611/spring-boot-interview-questions
+
+* Spring Boot Components
+
+
+Spring Boot Starter
+Spring Boot AutoConfigurator
+Spring Boot Actuator
+Spring Boot CLI
+Spring Boot Initilizr
+
+*** Spring Boot Starters are just JAR Files. They are used by Spring Boot Framework to provide “Auto-Dependency Resolution”.
+
+* How to get ServletContext and ServletConfig object in a Spring Bean?
+There are two ways to get Container specific objects in the spring bean.
+
+Implementing Spring *Aware interfaces, for these ServletContextAware and ServletConfigAware interfaces, 
+Using @Autowired annotation with bean variable of type ServletContext and ServletConfig. 
+They will work only in servlet container specific environment only though
+
+
+List some of the important annotations in annotation-based Spring configuration.
+The important annotations are:
+
+@Required
+@Autowired
+@Qualifier
+@Resource
+@PostConstruct
+@PreDestroy
+
+Explain Bean in Spring and List the different Scopes of Spring bean.
+Beans are objects that form the backbone of a Spring application. They are managed by the Spring IoC container. In other words, a bean is an object that is instantiated, assembled, and managed by a Spring IoC container.
+
+There are five Scopes defined in Spring beans.
+
+SpringBean - Java Interview Questions - Edureka
+
+Singleton: Only one instance of the bean will be created for each container. This is the default scope for the spring beans. While using this scope, make sure spring bean doesn’t have shared instance variables otherwise it might lead to data inconsistency issues because it’s not thread-safe.
+Prototype: A new instance will be created every time the bean is requested.
+Request: This is same as prototype scope, however it’s meant to be used for web applications. A new instance of the bean will be created for each HTTP request.
+Session: A new bean will be created for each HTTP session by the container.
+Global-session: This is used to create global session beans for Portlet applications.
+
+What are the differences between constructor injection and setter injection?
+	Constructor Injection	|Setter Injection
+ 1)	 No Partial Injection	| Partial Injection
+ 2)	 Desn’t override the setter property	| Overrides the constructor property if both are defined.
+ 3)	Creates new instance if any modification occurs	| Doesn’t create new instance if you change the property value
+ 4) 	 Better for too many properties	 | Better for few properties.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
