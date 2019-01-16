@@ -2,8 +2,7 @@
 public class rammohan {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		//Thats it we are done
 	}
 
 }
